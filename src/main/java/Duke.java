@@ -19,13 +19,24 @@ public class Duke {
         list[sum]=content;
     }
 
-    public static void showlist(String[] list, int sum)
+    public static void showlist(String[] list, int sum, boolean[] done)
     {
+        System.out.println("\n\tHere are the tasks in your list:");
         for (int i=0;i<sum;i++)
         {
-            System.out.println("\t"+(i+1)+". "+list[i]);
+            System.out.print("\t"+(i+1)+".");
+            if (done[i]) System.out.print("[✓] ");
+            else System.out.print("[✗] ");
+            System.out.println(list[i]);
         }
         System.out.println("");
+    }
+
+    public static void markAsDone(String[] list, boolean[] done,int index)
+    {
+        System.out.println("\n\tNice! I've marked this task as done:");
+        System.out.println("\t  [✓] "+list[index-1]+"\n");
+        done[index-1]=true;
     }
 
     public static void main(String[] args) {
@@ -40,6 +51,11 @@ public class Duke {
         Scanner in=new Scanner(System.in);
         String answer;
         String[] list=new String[100];
+        boolean[] whetherDone=new boolean[100];
+        for (int i=0;i<100;i++)
+        {
+            whetherDone[i]=false;
+        }
         int sum=0;
         while(true)
         {
@@ -47,7 +63,11 @@ public class Duke {
             if (answer.equals("bye")) break;
             else if (answer.equals("list"))
             {
-                showlist(list,sum);
+                showlist(list,sum,whetherDone);
+            }
+            else if (answer.contains("done"))
+            {
+                markAsDone(list,whetherDone,Character.getNumericValue(answer.charAt(answer.length()-1)));
             }
             else
             {
