@@ -67,7 +67,8 @@ public class Duke {
             }
             else if (answer.contains("done"))
             {
-                markAsDone(list,whetherDone,Character.getNumericValue(answer.charAt(answer.length()-1)));
+                String[] sentence=answer.split(" ");
+                markAsDone(list,whetherDone,Integer.parseInt(sentence[1]));
             }
             else
             {
