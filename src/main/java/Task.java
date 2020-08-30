@@ -1,40 +1,35 @@
 public class Task {
-    private String[] name;
-    private boolean[] done;
-    private int sum;
+    private String name;
+    private boolean done;
     public Task()
     {
-        name=new String[100];
-        done=new boolean[100];
-        for (int i=0;i<100;i++) done[i]=false;
-        sum=0;
+        done=false;
     }
-    public void addlist(String content)
+    public Task(String answer)
     {
-        System.out.print("\n\tadded: ");
-        Duke.echo(content);
-        name[sum]=content;
-        sum++;
+        name=answer;
+        done=false;
     }
-    public void showlist()
+    public void modifyName(String answer)
     {
-        System.out.println("\n\tHere are the tasks in your list:");
-        for (int i=0;i<sum;i++)
-        {
-            System.out.print("\t"+(i+1)+".");
-            if (done[i]) System.out.print("[✓] ");
-            else System.out.print("[✗] ");
-            System.out.println(name[i]);
-        }
-        System.out.println("");
+        name=answer;
     }
-    public void markAsDone(String answer)
+    public void markAsDone()
     {
-        int index;
-        String[] sentence=answer.split(" ");
-        index=Integer.parseInt(sentence[1]);
+        done=true;
         System.out.println("\n\tNice! I've marked this task as done:");
-        System.out.println("\t  [✓] "+name[index-1]+"\n");
-        done[index-1]=true;
+        System.out.println("\t  [✓] "+name+"\n");
+    }
+    public void setDone(boolean value)
+    {
+        done=value;
+    }
+    public boolean getDone()
+    {
+        return done;
+    }
+    public String getName()
+    {
+        return name;
     }
 }
