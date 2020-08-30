@@ -1,5 +1,6 @@
 public class Event extends Task{
     private String time;
+
     public Event(String answer)
     {
         System.out.println("\n\tGot it. I've added this task:");
@@ -9,11 +10,13 @@ public class Event extends Task{
         super.modifyName(name[1]);
         System.out.println("\t  "+this);
     }
+
     public String toString()
     {
         if (super.getDone()) return String.format("[E][✓] "+super.getName()+"(at: "+time+")");
         else return String.format("[E][✗] "+super.getName()+"(at: "+time+")");
     }
+
     public void markAsDone()
     {
         super.setDone(true);

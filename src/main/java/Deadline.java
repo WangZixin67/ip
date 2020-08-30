@@ -1,5 +1,6 @@
 public class Deadline extends Task{
     private String time;
+
     public Deadline(String answer)
     {
         System.out.println("\n\tGot it. I've added this task:");
@@ -9,11 +10,13 @@ public class Deadline extends Task{
         super.modifyName(name[1]);
         System.out.println("\t  "+this);
     }
+
     public String toString()
     {
         if (super.getDone()) return String.format("[D][✓] "+super.getName()+"(by: "+time+")");
         else return String.format("[D][✗] "+super.getName()+"(by: "+time+")");
     }
+
     public void markAsDone()
     {
         super.setDone(true);

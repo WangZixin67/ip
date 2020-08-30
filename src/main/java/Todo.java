@@ -6,11 +6,13 @@ public class Todo extends Task{
         super.modifyName(sentence[1]);
         System.out.println("\t  "+this);
     }
+
     public String toString()
     {
         if (super.getDone()) return String.format("[T][✓] "+super.getName());
         else return String.format("[T][✗] "+super.getName());
     }
+
     public void markAsDone()
     {
         super.setDone(true);
