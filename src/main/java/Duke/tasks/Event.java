@@ -1,20 +1,20 @@
-package Duke;
+package Duke.tasks;
 
-public class Deadline extends Task{
+public class Event extends Task {
     private String time;
 
-    public Deadline(String answer){
-        String[] sentences=answer.split("/by ");
+    public Event(String answer) {
+        String[] sentences=answer.split("/at ");
         time=sentences[1];
-        String[] name=sentences[0].split("deadline ");
+        String[] name=sentences[0].split("event ");
         super.modifyName(name[1]);
         System.out.println("\n\tGot it. I've added this task:");
         System.out.println("\t  "+this);
     }
 
     public String toString() {
-        if (super.getDone()) return String.format("[D][✓] "+super.getName()+"(by: "+time+")");
-        else return String.format("[D][✗] "+super.getName()+"(by: "+time+")");
+        if (super.getDone()) return String.format("[E][✓] "+super.getName()+"(at: "+time+")");
+        else return String.format("[E][✗] "+super.getName()+"(at: "+time+")");
     }
 
     public void markAsDone() {

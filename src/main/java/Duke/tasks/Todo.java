@@ -1,6 +1,8 @@
-package Duke;
+package Duke.tasks;
 
-public class Todo extends Task{
+import Duke.tasks.Task;
+
+public class Todo extends Task {
     public Todo(String answer) {
         String[] sentence=answer.split("todo ");
         super.modifyName(sentence[1]);

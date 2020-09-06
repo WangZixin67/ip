@@ -1,4 +1,4 @@
-package Duke;
+package Duke.tasks;
 
 public class Task {
     private String name;

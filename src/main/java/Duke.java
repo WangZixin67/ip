@@ -1,7 +1,10 @@
-package Duke;
+import Duke.exceptions.exceedNum;
+import Duke.tasks.Deadline;
+import Duke.tasks.Event;
+import Duke.tasks.Task;
+import Duke.tasks.Todo;
 
 import java.util.Scanner;
-
 
 public class Duke {
     public static void goodbye() {
@@ -15,11 +18,11 @@ public class Duke {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
     System.out.println("Hello from\n" + logo);*/
-        System.out.println("Hello! I'm Duke.Duke");
+        System.out.println("Hello! I'm Duke");
         System.out.println("What can I do for you?\n");
     }
 
-    public static void checkSum(int sum) throws exceedNum{
+    public static void checkSum(int sum) throws exceedNum {
         if (sum==100){
             throw new exceedNum();
         }
