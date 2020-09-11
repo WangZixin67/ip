@@ -34,4 +34,8 @@ public class Task {
     public String getName() {
         return name;
     }
+
+    public String writeToFile(){
+        return name;
+    }
 }

@@ -23,4 +23,11 @@ public class Deadline extends Task {
         System.out.print("\t  ");
         System.out.println(this+"\n");
     }
+
+    public String writeToFile() {
+        String done="0";
+        if (super.getDone()) done="1";
+        String sentence="D | "+done+" | "+super.getName()+" | "+time;
+        return sentence;
+    }
 }

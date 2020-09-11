@@ -21,4 +21,11 @@ public class Todo extends Task {
         System.out.print("\t  ");
         System.out.println(this+"\n");
     }
+
+    public String writeToFile() {
+        String done="0";
+        if (super.getDone()) done="1";
+        String sentence="T | "+done+" | "+super.getName();
+        return sentence;
+    }
 }
