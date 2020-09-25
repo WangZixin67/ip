@@ -8,13 +8,13 @@ public class Task {
         done=false;
     }
 
-    public Task(String answer) {
-        name=answer;
+    public Task(String userInput) {
+        name=userInput;
         done=false;
     }
 
-    public void modifyName(String answer) {
-        name=answer;
+    public void modifyName(String input) {
+        name=input;
     }
 
     public void markAsDone() {

@@ -3,8 +3,8 @@ package Duke.tasks;
 public class Deadline extends Task {
     private String time;
 
-    public Deadline(String answer){
-        String[] sentences=answer.split("/by ");
+    public Deadline(String userInput){
+        String[] sentences=userInput.split("/by ");
         time=sentences[1];
         String[] name=sentences[0].split("deadline ");
         super.modifyName(name[1]);
@@ -13,8 +13,12 @@ public class Deadline extends Task {
     }
 
     public String toString() {
-        if (super.getDone()) return String.format("[D][✓] "+super.getName()+"(by: "+time+")");
-        else return String.format("[D][✗] "+super.getName()+"(by: "+time+")");
+        if (super.getDone()) {
+            return String.format("[D][✓] "+super.getName()+"(by: "+time+")");
+        }
+        else {
+            return String.format("[D][✗] "+super.getName()+"(by: "+time+")");
+        }
     }
 
     public void markAsDone() {
@@ -26,7 +30,9 @@ public class Deadline extends Task {
 
     public String writeToFile() {
         String done="0";
-        if (super.getDone()) done="1";
+        if (super.getDone()) {
+            done="1";
+        }
         String sentence="D | "+done+" | "+super.getName()+" | "+time;
         return sentence;
     }
