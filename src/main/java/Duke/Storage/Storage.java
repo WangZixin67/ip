@@ -11,7 +11,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Read and write data to a file
+ */
 public class Storage {
+    /**
+     * Read and input the tasks in the file to the task array
+     * @param tasks the task array
+     * @return the sum of tasks in the file
+     */
     public int readFile(Task[] tasks){
         try {
             int sum=0;
@@ -57,6 +65,11 @@ public class Storage {
         return 0;
     }
 
+    /**
+     * Clear the file and write tasks' information into the file according to the task array
+     * @param tasks the task array
+     * @param sum the sum of tasks in the array
+     */
     public void writeFile(Task[] tasks, int sum){
         try {
             File f = new File("/Users/tissue/Desktop/CS2113T/ip/data/duke.txt");
@@ -72,6 +85,9 @@ public class Storage {
         }
     }
 
+    /**
+     * Clear all the text in the file
+     */
     public void clearFile(){
         try {
             File f = new File("/Users/tissue/Desktop/CS2113T/ip/data/duke.txt");

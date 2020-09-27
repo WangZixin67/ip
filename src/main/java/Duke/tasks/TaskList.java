@@ -6,10 +6,17 @@ import Duke.tasks.Event;
 import Duke.tasks.Task;
 import Duke.tasks.Todo;
 
+/**
+ * Stores the task array and the methods related to different kinds of tasks
+ */
 public class TaskList {
     public int num=0;
     public Task tasks[]=new Task[100];
 
+    /**
+     * Create an event task
+     * @param answer the user input command including event name and time
+     */
     public void processEvent(String answer) {
         try {
             checkSum();
@@ -25,6 +32,10 @@ public class TaskList {
         }
     }
 
+    /**
+     * Create a deadline task
+     * @param answer the user input command including deadline time and name
+     */
     public void processDeadline(String answer) {
         try {
             checkSum();
@@ -40,6 +51,10 @@ public class TaskList {
         }
     }
 
+    /**
+     * Create a todo task
+     * @param answer the user input command including todo name
+     */
     public void processTodo(String answer) {
         try {
             checkSum();
@@ -55,6 +70,10 @@ public class TaskList {
         }
     }
 
+    /**
+     * Delete a particular index of task
+     * @param answer the user input command including index
+     */
     public void processDelete(String answer){
         try {
             String[] sentences = answer.split("delete ");
@@ -80,6 +99,9 @@ public class TaskList {
         }
     }
 
+    /**
+     * print out every tasks in the task array
+     */
     public void printList() {
         System.out.println("\tHere are the tasks in your list:");
         for (int i = 0; i < num; i++) {
@@ -88,6 +110,10 @@ public class TaskList {
         System.out.println();
     }
 
+    /**
+     * Modify a particular index task's done status to true
+     * @param answer the user input command including task's index
+     */
     public void processDone(String answer) {
         int index;
         try {
@@ -106,18 +132,37 @@ public class TaskList {
         }
     }
 
+    /**
+     * check whether the task list is full
+     * @throws exceedNum the task list is full
+     */
     public void checkSum() throws exceedNum {
         if (num==100) {
             throw new exceedNum();
         }
     }
 
+    /**
+     * print how much tasks are in the list
+     */
     public void numList() {
         if (num == 1) {
             System.out.println("\tNow you have " + num + " task in the list.\n");
         }
         else {
             System.out.println("\tNow you have " + num + " tasks in the list.\n");
+        }
+    }
+
+    /**
+     * find the tasks including the key word
+     * @param input the key word
+     */
+    public void find(String input) {
+        for (int i=0;i<num;i++) {
+            if (tasks[i].getName().contains(input)) {
+                System.out.println("\t"+ (i + 1)+"."+tasks[i]);
+            }
         }
     }
 }

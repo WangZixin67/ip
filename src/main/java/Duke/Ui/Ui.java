@@ -1,5 +1,8 @@
 package Duke.Ui;
 
+/**
+ * print out the greeting sentence and goodbye sentence
+ */
 public class Ui {
     public void goodbye() {
         System.out.println("\nBye.Hope to see you again soon!");

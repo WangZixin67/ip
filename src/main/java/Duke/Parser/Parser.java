@@ -2,25 +2,31 @@ package Duke.Parser;
 
 import Duke.tasks.TaskList;
 
+/**
+ * Judge whether the command is valid and go to each method accordingly
+ */
 public class Parser {
    public void parse(String input, TaskList tasklist) {
        String sentences[]=input.split(" ");
        if (input.equals("list")) {
            tasklist.printList();
        }
-       else if (sentences[0].contains("todo")) {
+       else if (sentences[0].equals("find")){
+           tasklist.find(sentences[1]);
+       }
+       else if (sentences[0].equals("todo")) {
            tasklist.processTodo(input);
        }
-       else if (sentences[0].contains("deadline")) {
+       else if (sentences[0].equals("deadline")) {
            tasklist.processDeadline(input);
        }
-       else if (sentences[0].contains("event")) {
+       else if (sentences[0].equals("event")) {
            tasklist.processEvent(input);
        }
-       else if (sentences[0].contains("delete")){
+       else if (sentences[0].equals("delete")){
            tasklist.processDelete(input);
        }
-       else if (sentences[0].contains("done")) {
+       else if (sentences[0].equals("done")) {
            tasklist.processDone(input);
        }
        else {
