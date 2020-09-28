@@ -1,5 +1,10 @@
 package Duke.tasks;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.regex.Pattern;
+
 /**
  * Create an event task including its name and time
  * time is represented by a string
@@ -15,7 +20,17 @@ public class Event extends Task {
      */
     public Event(String userInput) {
         String[] sentences=userInput.split(" /at ");
-        time=sentences[1];
+        String pattern = "\\d+-\\d+-\\d+";
+        String output="";
+        boolean isMatch= Pattern.matches(pattern,sentences[1]);
+        if (isMatch) {
+            LocalDate d=LocalDate.parse(sentences[1]);
+            output=d.format(DateTimeFormatter.ofPattern("MMM dd yyyy").localizedBy(Locale.ENGLISH));
+            time=output;
+        }
+        else {
+            time=sentences[1];
+        }
         String[] name=sentences[0].split("event ");
         super.modifyName(name[1]);
         System.out.println("\n\tGot it. I've added this task:");
