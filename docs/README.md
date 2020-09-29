@@ -66,9 +66,9 @@ Example of usage:
 
 Expected outcome:
 
-`Got it. I've add this task:  
-[T][✗] read book  
-Now you have 1 tasks in the list.`
+`Got it. I've add this task:`   
+`[T][✗] read book`  
+`Now you have 1 tasks in the list.`
 
 ### `deadline` - Records user's deadline task content and time
 
@@ -87,9 +87,9 @@ Example of usage:
 
 Expected outcome:
 
-`Got it. I've added this task:  
-[D][✗] return book (by: Oct 01 2020)  
-Now you have 2 tasks in the list.`
+`Got it. I've added this task:`    
+`[D][✗] return book (by: Oct 01 2020)`    
+`Now you have 2 tasks in the list.`
 
 ### `event`- Records user's event task content and time
 
@@ -108,9 +108,9 @@ Example of usage:
 
 Expected outcome:
 
-`Got it. I've added this task:  
-[E][✗] go party (at: Oct 02 2020)  
-Now you have 3 tasks in the list.`
+`Got it. I've added this task:`  
+`[E][✗] go party (at: Oct 02 2020)`   
+`Now you have 3 tasks in the list.`
 
 ### `list` - List all the tasks in the task list
 
@@ -127,10 +127,10 @@ Example of usage:
 
 Expected outcome:
 
-`Here are the tasks in your list:  
-1.[T][✗] read book  
-2.[D][✗] return book (by: Oct 01 2020)  
-3.[E][✗] go party (at: Oct 02 2020)`
+`Here are the tasks in your list:`  
+`1.[T][✗] read book`  
+`2.[D][✗] return book (by: Oct 01 2020)`  
+`3.[E][✗] go party (at: Oct 02 2020)`
 
 ### `done` - Modify the task's "done" status as true
 
@@ -147,8 +147,8 @@ Example of usage:
 
 Expected outcome:
 
-`Nice! I've marked this task as done:  
-[D][✓] return book (by: Oct 01 2020)`
+`Nice! I've marked this task as done:`  
+`[D][✓] return book (by: Oct 01 2020)`
 
 ### `find` - List all the tasks whose contents include the keyword
 
@@ -165,8 +165,8 @@ Example of usage:
 
 Expected outcome:
 
-`1.[T][✗] read book  
-2.[D][✓] return book (by: Oct 01 2020)`
+`1.[T][✗] read book`   
+`2.[D][✓] return book (by: Oct 01 2020)`
 
 ### `delete` - Delete one of the tasks in the task list
 
@@ -183,6 +183,6 @@ Example of usage:
 
 Expected outcome:
 
-`Noted. I've removed this task.  
-[D][✓] return book (by: Oct 01 2020)  
-Now you have 2 tasks in the list.`
+`Noted. I've removed this task.`  
+`[D][✓] return book (by: Oct 01 2020)`   
+`Now you have 2 tasks in the list.`
